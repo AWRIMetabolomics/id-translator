@@ -1,7 +1,7 @@
 
 # 1. HMDB Compound Classification
 
-* Overview of steps: first generate a dict of `"primary_key"`:[list_of_secondary_keys]. This will not be done frequently.
+* Overview of steps: first generate a dict of `"primary_key":[list_of_secondary_keys]`. This will not be done frequently.
 * Given the `hmdb_metabolites.xml` file, scrape a dictionary of primary HMDB accession numbers, with their respective secondary accession numbers, and save it all in a `json`.
 * **Input:** `abs/path/to/hmdb_metabolites.xml`. Download this from here (link "All Metabolites" XML file): https://hmdb.ca/downloads
 * Necessary because MetaboAnalyst sometimes returns secondary accession numbers instead of primary ones, and a GET request to `https://hmdb.ca/metabolites/{hmdb_id}.xml` won't work for secondary HMDB accession numbers (browser behaviour: auto-redirect to primary accession number, which confuses the GET request, causing it to return javascript gibberish with status code 200).
